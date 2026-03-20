@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Playlists - YT Analyzer</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Compare Two YouTube Playlists</h1>
+    <p class="subtitle">Enter two playlist URLs or playlist IDs. Comparison reads existing data from DB only.</p>
+
+    <nav class="card top-nav">
+      <a class="link-btn" href="/">Analyze</a>
+      <a class="link-btn" href="/compare">Compare</a>
+      <a class="link-btn" href="/playlists">Playlists</a>
+    </nav>
+
+    <form id="compare-form" class="card">
+      <label for="url1">Playlist URL or ID 1</label>
+      <input id="url1" name="url1" type="text" placeholder="https://www.youtube.com/playlist?list=... or PLxxxx" required />
+
+      <label for="url2">Playlist URL or ID 2</label>
+      <input id="url2" name="url2" type="text" placeholder="https://www.youtube.com/playlist?list=... or PLxxxx" required />
+
+      <button id="compare-btn" type="submit">Compare</button>
+    </form>
+
+    <section class="card" id="summary-card" hidden>
+      <h2>Comparison Summary</h2>
+      <pre id="summary-output"></pre>
+    </section>
+
+    <section id="results-grid" class="compare-grid" hidden>
+      <article class="card" id="p1-card">
+        <h3 id="p1-title"></h3>
+        <p id="p1-channel" class="subtitle"></p>
+        <ul class="metric-list">
+          <li><strong>Total Videos:</strong> <span id="p1-total"></span></li>
+          <li><strong>Avg Views:</strong> <span id="p1-views"></span></li>
+          <li><strong>Avg Likes:</strong> <span id="p1-likes"></span></li>
+          <li><strong>Avg Comments:</strong> <span id="p1-comments"></span></li>
+          <li><strong>Avg Duration:</strong> <span id="p1-duration"></span></li>
+          <li><strong>Engagement:</strong> <span id="p1-engagement"></span></li>
+        </ul>
+      </article>
+
+      <article class="card" id="p2-card">
+        <h3 id="p2-title"></h3>
+        <p id="p2-channel" class="subtitle"></p>
+        <ul class="metric-list">
+          <li><strong>Total Videos:</strong> <span id="p2-total"></span></li>
+          <li><strong>Avg Views:</strong> <span id="p2-views"></span></li>
+          <li><strong>Avg Likes:</strong> <span id="p2-likes"></span></li>
+          <li><strong>Avg Comments:</strong> <span id="p2-comments"></span></li>
+          <li><strong>Avg Duration:</strong> <span id="p2-duration"></span></li>
+          <li><strong>Engagement:</strong> <span id="p2-engagement"></span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Raw API Response</h2>
+      <pre id="output">Submit two playlist URLs to compare.</pre>
+    </section>
+  </main>
+
+  <script src="/static/compare.js"></script>
+</body>
+</html>

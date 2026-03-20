@@ -1,0 +1,33 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+ENV/
+
+# Database files
+*.sqlite
+*.db
+
+# Runtime files
+*.log
+
+# Generated exports
+sheets/*.xlsx
+sheets/*.xls
+
+# IDE settings
+.vscode/
+.idea/
+
+# Static/Frontend build artifacts (if any)
+node_modules/
+dist/

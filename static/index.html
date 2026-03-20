@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Analyzer</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>YouTube Playlist Analyzer</h1>
+    <p class="subtitle">Analyze playlist videos and store results in PostgreSQL.</p>
+
+    <nav class="card top-nav">
+      <a class="link-btn" href="/">Analyze</a>
+      <a class="link-btn" href="/compare">Compare</a>
+      <a class="link-btn" href="/playlists">Playlists</a>
+    </nav>
+
+    <form id="analyze-form" class="card">
+      <label for="url">Playlist URL</label>
+      <input id="url" name="url" type="url" placeholder="https://www.youtube.com/playlist?list=..." required />
+
+      <label for="freshness">Freshness Hours</label>
+      <input id="freshness" name="freshness" type="number" min="1" max="168" value="24" required />
+
+      <div class="actions">
+        <button id="submit-btn" type="submit">Analyze</button>
+        <button id="view-btn" type="button">View Playlist</button>
+      </div>
+    </form>
+
+    <section class="card">
+      <h2>Response</h2>
+      <pre id="output">Submit a playlist URL to start analysis.</pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
